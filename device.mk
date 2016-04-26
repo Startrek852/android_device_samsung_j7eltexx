@@ -79,7 +79,6 @@ PRODUCT_PACKAGES += \
 # Graphics
 PRODUCT_PACKAGES += \
     gralloc.exynos5
-#    hwcomposer.exynos5
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -161,6 +160,20 @@ PRODUCT_COPY_FILES += \
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
+
+# DALVIK/ART
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.sys.fw.dex2oat_thread_count=4 \
+    dalvik.vm.dexopt-flags=m=y \
+    dalvik.vm.isa.arm.features=div
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m
+    dalvik.vm.heapgrowthlimit=128m
+    dalvik.vm.heapsize=512m
+    dalvik.vm.heaptargetutilization=0.75
+    dalvik.vm.heapminfree=2m
+    dalvik.vm.heapmaxfree=8m
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
