@@ -33,6 +33,8 @@ wifi.interface=wlan0
 ro.product_ship=true
 ro.chipname=exynos7580
 ro.arch=exynos7580
+ro.kernel.qemu=0
+ro.kernel.qemu.gles=1
 
 # Strict Mode
 persist.sys.strictmode.disable=true
