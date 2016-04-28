@@ -61,6 +61,10 @@ BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
+# Maximum dimension (width or height) of a virtual display that will be
+# handled by the hardware composer
+MAX_VIRTUAL_DISPLAY_DIMENSION := 1280
+
 # (G)SCALER
 BOARD_USES_SCALER := true
 BOARD_USES_DT := true
