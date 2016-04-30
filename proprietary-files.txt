@@ -113,6 +113,7 @@ vendor/firmware/setfile_5e3.bin
 etc/firmware/dbd2_fw.bin
 
 # GPS
+bin/gps.cer
 bin/gpsd
 lib/hw/gps.default.so:lib/hw/gps.universal7580.so
 lib/libwrappergps.so
@@ -157,6 +158,9 @@ app/mcRegistry/ffffffff000000000000000000000019.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
 app/mcRegistry/ffffffffd00000000000000000000016.tlbin
 app/mcRegistry/fffffffff0000000000000000000001e.tlbin
+bin/cs
+lib/libMcClient.so
+lib/libMcRegistry.so
 
 
 # Prebuilts
@@ -178,8 +182,6 @@ lib/libhwcutils.so
 lib/libhwcutilsmodule.so
 lib/libhwjpeg.so
 lib/libion_exynos.so
-lib/libMcClient.so
-lib/libMcRegistry.so
 lib/libmpp.so
 lib/libOpensslReg.so
 lib/libopensslsmime.so
