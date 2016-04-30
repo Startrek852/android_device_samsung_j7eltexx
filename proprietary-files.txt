@@ -177,7 +177,6 @@ lib/libhdmimodule.so
 lib/libhwcutils.so
 lib/libhwcutilsmodule.so
 lib/libhwjpeg.so
-lib/libion.so
 lib/libion_exynos.so
 lib/libMcClient.so
 lib/libMcRegistry.so
@@ -185,6 +184,7 @@ lib/libmpp.so
 lib/libOpensslReg.so
 lib/libopensslsmime.so
 lib/libstagefrighthw.so
+lib/libstagefright_yuv.so
 lib/libsxqk_skia.so
 lib/libvdis_core.so
 lib/libvdis_interface.so
