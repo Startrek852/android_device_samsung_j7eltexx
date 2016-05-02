@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter j7eltexx,$(TARGET_DEVICE)),)
+ifneq ($(filter j7elte_64,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 # Create links for OpenCL files

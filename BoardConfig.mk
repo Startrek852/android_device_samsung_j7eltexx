@@ -16,7 +16,7 @@
 
 TARGET_OTA_ASSERT_DEVICE := j7e3g,j7e3gxx,j7elte,j7eltexx
 
-DEVICE_PATH := device/samsung/j7eltexx
+DEVICE_PATH := device/samsung/j7elte_64
 
 BOARD_VENDOR := samsung
 
@@ -24,14 +24,21 @@ BOARD_VENDOR := samsung
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # CPU
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_ARCH := arm
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a53
-TARGET_CPU_CORTEX_A53 := true
+#TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_ABI := arm64-v8a
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_VARIANT := cortex-a53
+#TARGET_CPU_CORTEX_A53 := true
+
+TARGET_USES_64_BIT_BINDER := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -106,7 +113,7 @@ TARGET_POWERHAL_VARIANT := samsung
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm
+TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
 BOARD_KERNEL_BASE := 0x10000000
@@ -160,10 +167,11 @@ CHARGING_ENABLED_PATH := /sys/class/power_supply/battery/batt_lp_charging
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-	device/samsung/j7eltexx/sepolicy
+	device/samsung/j7elte_64/sepolicy
 
 # Renderscript
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
+BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a53
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
